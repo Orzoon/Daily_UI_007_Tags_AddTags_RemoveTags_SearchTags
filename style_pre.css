@@ -1,0 +1,216 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+.container {
+    position: absolute;
+    margin-top: 40px;
+    height: auto;
+    width: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width .5s ease-in;
+    display: grid;
+    background: rgb(254, 254, 254);
+    box-shadow: 0px 0px 3px rgba(0,0,0,.3);
+    grid-template: 100px minmax(50px,auto) 1fr / 1fr;
+    grid-template-areas: 'toggle'
+                         'searchAddContainer'
+                         'tags';
+}
+.toggle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    grid-area: toggle;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.toggle .toggleSearch, .toggle  .toggleAddTag {
+    width: 100px;
+    height: 100%;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    border: 0px solid #fff;
+    cursor: pointer;
+    background: #AAB2BD;
+    color: #F5F7FA;
+}
+.toggle button:focus {
+    outline: none;
+}
+.active{
+    background: rgb(14,27,64) !important;
+    color: #fff !important;
+}
+
+.searchAddContainer {
+    position: relative;
+    grid-area: searchAddContainer; 
+    margin: 0 15px;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+}
+
+.searchContainer,.addContainer {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+.show {
+    display: flex !important;
+}
+
+.addContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 4px  rgb(207, 211, 216);
+    justify-content: flex-start;
+    padding: 0 10px;
+    display: none;
+}
+.addContainer .buttonClass{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    background: none;
+    border: none;
+    margin-top: 7px;
+    padding: 6px 0px 6px 8px;   
+    margin-right: 4px;
+    overflow: hidden;
+    background: #7B808C;
+    color: #fff;
+    box-shadow: 0px 0px 3px rgb(166, 173, 184);
+}
+
+.addContainer .buttonClass span {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    margin-left: 6px;
+    text-align: center;
+    padding-right: 8px;
+    padding-left: 8px;
+    color: #ccc;
+}
+
+.addContainer .buttonClass span:hover {
+    color: #000;
+}
+.addContainer .buttonClass span:before {
+    position: absolute;
+    content: ' ';
+    top: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+.addContainer .buttonClass span:after {
+    position: absolute;
+    content: '';
+    bottom: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff; 
+}
+.addContainer .buttonClass i {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#addTag{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    border: none;
+    width: 100%;
+    height: 50px;
+}
+#addTag:focus, #search:focus {
+    outline: none;
+}
+#search {
+    border: none;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 0px 10px;
+    box-shadow: 0px 0px 4px  rgb(207, 211, 216);
+}
+
+
+.ul {
+    margin: 25px 15px 25px 15px;
+    grid-area: tags;
+    padding: 0;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.ul li {
+    position: relavite;
+    list-style-type: none;  
+    align-self: flex-start;
+    font-size: 18px;
+    padding: 6px 0px 6px 8px;   
+    margin-right: 7px;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 7px;
+    background: red;
+}
+
+.ul li button {
+    position: relative;
+    background: #fff;
+    border: 0px solid #FFF;
+    font-size: 16px;
+    height: 100%;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-left: 6px;
+    cursor: pointer;
+}
+.ul li button:after, .ul li button:before {
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 120%;
+    background: #fff;
+    left: 0;
+}
+.ul li button:after {
+    top: -100%;
+}
+.ul li button:before {
+    bottom: -100%;
+}
+ul li button:hover {
+    color: rgba(0,0,0,.7);
+}
+
+@media only screen and (min-width: 600px){
+    .container{
+        width: 500px;
+        transition: width .5s ease-in;
+    }
+}
+
